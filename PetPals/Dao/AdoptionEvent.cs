@@ -17,10 +17,7 @@ namespace PetPals.Dao
             connectionString = "Server=TEJAS;Database=PetPals;Trusted_Connection=True";
             cmd = new SqlCommand();
         }
-        public void Adopt()
-        {
-            
-        }
+        
 
         public void HostEvent(Event events)
         {
@@ -55,6 +52,10 @@ namespace PetPals.Dao
                     Console.WriteLine("Participant Registered Successfully...........");
                 }
             }
+        }
+        public void Adopt()
+        {
+
         }
 
     }

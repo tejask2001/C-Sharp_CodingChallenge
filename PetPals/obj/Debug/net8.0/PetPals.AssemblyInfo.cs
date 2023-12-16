@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PetPals")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d08b68a27f182674cdc4ab150e15c80addaf4799")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+830d5c7ea75c804c05c183311b61a997d8081fec")]
 [assembly: System.Reflection.AssemblyProductAttribute("PetPals")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PetPals")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

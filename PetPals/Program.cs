@@ -1,89 +1,42 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using PetPals.Dao;
 using PetPals.Entity;
+using PetPals.ServiceRepositry;
 using System.Threading.Channels;
 
 
+IServiceRepository repository = new ServiceRepository();
 int choice = 0;
 int i = 1;
 
 do
 {
     
-    Console.WriteLine("Press 1 : Display List of Pets\n" +
+    Console.WriteLine(".....Welcome to PetPals.....\n" +
+        "\nPress 1 : Display List of Pets\n" +
         "Press 2 : Record Donation\n" +
         "Press 3 : Register for adoption event\n" +
-        "Press 4 : Add Pet");
+        "Press 4 : Add Pet\n" +
+        "Press 5 : Remove Pet\n" +
+        "Press 0 : Exit\n");
 
     choice=Convert.ToInt32(Console.ReadLine());
     switch (choice)
     {
         case 1:
-            List<Pet> pet = new List<Pet>();
-            PetShelter petShelter = new PetShelter();
-            pet=petShelter.ListAvailablePets();
-            foreach(var p in pet)
-            {
-                Console.WriteLine(p);
-            }
+            repository.displayList();
             break;
         case 2:
-            ItemDonation donation = new ItemDonation();
-            CashDonation cashDonation = new CashDonation();
-            Console.WriteLine("Enter Donor Name:");
-            string name = Console.ReadLine();
-            donation.DonorName = name;
-            Console.WriteLine("Enter donation type 'cash' or 'item' Donation:");
-            string type = Console.ReadLine();
-            donation.DonationType = type;
-            if (type == "cash")
-            {
-                Console.WriteLine("Enter amount");
-                decimal amount = Convert.ToDecimal(Console.ReadLine());
-                donation.DonationAmount = amount;
-                cashDonation.RecordDonation(donation);
-            }
-            else
-            {
-                Console.WriteLine("Enter Donation Item");
-                string item = Console.ReadLine();
-                donation.DonationItem = item;
-                donation.RecordDonation(donation);
-            }
+            repository.recordDonation();
             break;
         case 3:
-            AdoptionEvent events = new AdoptionEvent();
-            Participants participant=new Participants();
-            Console.WriteLine("Enter your name:");
-            string participantName= Console.ReadLine();
-            participant.ParticipantName = participantName;
-            Console.WriteLine("Participant Type (event or shelter):");
-            string participantType= Console.ReadLine();
-            participant.ParticipantType = participantType;
-            Console.WriteLine("Enter event id");
-            int eventId = Convert.ToInt32(Console.ReadLine());
-            participant.ParticipantID=eventId;
-            events.RegisterParticipant(participant);
+            repository.registerForAdoptionEvent();
             break;
         case 4:
-            Pet pets = new Pet();
-            PetShelter ps = new PetShelter();
-            Console.WriteLine("Enter name of the pet");
-            string petName= Console.ReadLine();
-            pets.Name = petName;
-            Console.WriteLine("Enter the age of pet");
-            int age= Convert.ToInt32(Console.ReadLine());
-            pets.Age = age;
-            Console.WriteLine("Enter breed of pet");
-            string breed= Console.ReadLine();
-            pets.Breed = breed;
-            Console.WriteLine("Enter type of pet (Cat or Dog)");
-            string typeOfPet= Console.ReadLine();
-            pets.Type = typeOfPet;
-            Console.WriteLine("Enter 1 if available for adoption else 0");
-            int availableForAdoption= Convert.ToInt32(Console.ReadLine());
-            pets.AvailableForAdoption = availableForAdoption;
-            ps.AddPet(pets);
+            repository.addPet();
+            break;
+        case 5:
+            repository.removePet();
             break;
         default:
             Console.WriteLine("Invalid input received");
