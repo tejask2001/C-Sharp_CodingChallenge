@@ -12,7 +12,8 @@ do
     
     Console.WriteLine("Press 1 : Display List of Pets\n" +
         "Press 2 : Record Donation\n" +
-        "Press 3 : Register for adoption event");
+        "Press 3 : Register for adoption event\n" +
+        "Press 4 : Add Pet");
 
     choice=Convert.ToInt32(Console.ReadLine());
     switch (choice)
@@ -63,6 +64,26 @@ do
             int eventId = Convert.ToInt32(Console.ReadLine());
             participant.ParticipantID=eventId;
             events.RegisterParticipant(participant);
+            break;
+        case 4:
+            Pet pets = new Pet();
+            PetShelter ps = new PetShelter();
+            Console.WriteLine("Enter name of the pet");
+            string petName= Console.ReadLine();
+            pets.Name = petName;
+            Console.WriteLine("Enter the age of pet");
+            int age= Convert.ToInt32(Console.ReadLine());
+            pets.Age = age;
+            Console.WriteLine("Enter breed of pet");
+            string breed= Console.ReadLine();
+            pets.Breed = breed;
+            Console.WriteLine("Enter type of pet (Cat or Dog)");
+            string typeOfPet= Console.ReadLine();
+            pets.Type = typeOfPet;
+            Console.WriteLine("Enter 1 if available for adoption else 0");
+            int availableForAdoption= Convert.ToInt32(Console.ReadLine());
+            pets.AvailableForAdoption = availableForAdoption;
+            ps.AddPet(pets);
             break;
         default:
             Console.WriteLine("Invalid input received");

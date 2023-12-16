@@ -28,3 +28,4 @@ C:\Users\Tejas PC\Desktop\Hexaware\C#_Coding_Challenge\PetPals\obj\Debug\net8.0\
 C:\Users\Tejas PC\Desktop\Hexaware\C#_Coding_Challenge\PetPals\obj\Debug\net8.0\PetPals.pdb
 C:\Users\Tejas PC\Desktop\Hexaware\C#_Coding_Challenge\PetPals\obj\Debug\net8.0\PetPals.genruntimeconfig.cache
 C:\Users\Tejas PC\Desktop\Hexaware\C#_Coding_Challenge\PetPals\obj\Debug\net8.0\ref\PetPals.dll
+C:\Users\Tejas PC\Desktop\Hexaware\C#_Coding_Challenge\PetPals\obj\Debug\net8.0\PetPals.sourcelink.json
